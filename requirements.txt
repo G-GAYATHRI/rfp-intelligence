@@ -1,0 +1,16 @@
+pymupdf
+pdfplumber
+beautifulsoup4
+lxml
+trafilatura
+chromadb
+rank-bm25
+sentence-transformers
+fastapi
+uvicorn
+pydantic
+python-dotenv
+pytest
+langgraph
+streamlit
+anthropic

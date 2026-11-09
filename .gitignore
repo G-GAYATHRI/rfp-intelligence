@@ -9,3 +9,6 @@ logs/
 # Local bid documents and generated outputs
 data/
 outputs/
+
+eval/corpus/
+eval/corpus_chunks.jsonl

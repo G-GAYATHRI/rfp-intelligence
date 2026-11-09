@@ -1,0 +1,299 @@
+[
+  {
+    "id": "B1-01",
+    "bid_id": "Bid1",
+    "query": "What is the final submission deadline after the addenda?",
+    "expect_file_contains": "Addendum 2",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "new due date for this RFP will be July 9, 2024 at 2:00 PM CST"
+    ],
+    "expected_chunk_id": "Bid1::Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf::p1::17"
+  },
+  {
+    "id": "B1-02",
+    "bid_id": "Bid1",
+    "query": "What is the original solicitation number and title?",
+    "expect_file_contains": "JA-207652 Student and Staff Computing Devices FINAL",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "Request For Proposal 168884"
+    ],
+    "expected_chunk_id": "Bid1::JA-207652 Student and Staff Computing Devices FINAL.pdf::p1::18"
+  },
+  {
+    "id": "B1-03",
+    "bid_id": "Bid1",
+    "query": "Who is the buyer listed on the original RFP?",
+    "expect_file_contains": "JA-207652 Student and Staff Computing Devices FINAL",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "ALZATE, JASMINE"
+    ],
+    "expected_chunk_id": "Bid1::JA-207652 Student and Staff Computing Devices FINAL.pdf::p2::19"
+  },
+  {
+    "id": "B1-04",
+    "bid_id": "Bid1",
+    "query": "When is the pre-proposal meeting scheduled?",
+    "expect_file_contains": "JA-207652 Student and Staff Computing Devices FINAL",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "10-JUN-2024 14:00:00"
+    ],
+    "expected_chunk_id": "Bid1::JA-207652 Student and Staff Computing Devices FINAL.pdf::p2::19"
+  },
+  {
+    "id": "B1-05",
+    "bid_id": "Bid1",
+    "query": "What is the initial contract term and renewal structure?",
+    "expect_file_contains": "JA-207652 Student and Staff Computing Devices FINAL",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "Initial Term: 3 Renewal 1: 1 Renewal 2: 1"
+    ],
+    "expected_chunk_id": "Bid1::JA-207652 Student and Staff Computing Devices FINAL.pdf::p2::20"
+  },
+  {
+    "id": "B1-06",
+    "bid_id": "Bid1",
+    "query": "What is the purpose and scope of the student and staff computing devices RFP?",
+    "expect_file_contains": "JA-207652 Student and Staff Computing Devices FINAL",
+    "expect_page": 3,
+    "expect_text_contains": [
+      "student and staff computing devices, including laptops"
+    ],
+    "expected_chunk_id": "Bid1::JA-207652 Student and Staff Computing Devices FINAL.pdf::p3::22"
+  },
+  {
+    "id": "B1-07",
+    "bid_id": "Bid1",
+    "query": "What is the minimum USB requirement for the non-touch display monitor clarified by Addendum 1?",
+    "expect_file_contains": "Addendum 1",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "USB 3.1 is a minimum requirement"
+    ],
+    "expected_chunk_id": "Bid1::Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf::p1::0"
+  },
+  {
+    "id": "B1-08",
+    "bid_id": "Bid1",
+    "query": "Does Addendum 1 permit a higher USB specification than 3.2?",
+    "expect_file_contains": "Addendum 1",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "A higher specification is permissible"
+    ],
+    "expected_chunk_id": "Bid1::Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf::p1::0"
+  },
+  {
+    "id": "B1-09",
+    "bid_id": "Bid1",
+    "query": "Which devices require etching according to Addendum 1?",
+    "expect_file_contains": "Addendum 1",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "Dallas ISD will only require etching on Laptops"
+    ],
+    "expected_chunk_id": "Bid1::Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf::p1::1"
+  },
+  {
+    "id": "B1-10",
+    "bid_id": "Bid1",
+    "query": "Does the district require vendors to keep inventory in stock?",
+    "expect_file_contains": "Addendum 1",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "Dallas ISD is not requiring vendors to keep inventory in stock"
+    ],
+    "expected_chunk_id": "Bid1::Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf::p2::4"
+  },
+  {
+    "id": "B1-11",
+    "bid_id": "Bid1",
+    "query": "Is a local vendor location required?",
+    "expect_file_contains": "Addendum 1",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "No, a local location is not required"
+    ],
+    "expected_chunk_id": "Bid1::Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf::p2::5"
+  },
+  {
+    "id": "B1-12",
+    "bid_id": "Bid1",
+    "query": "What does Addendum 2 say bidders must submit with their proposal?",
+    "expect_file_contains": "Addendum 2",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "ACKNOWLEDGE AND RETURN/SUBMIT A COPY OF THIS ADDENDUM"
+    ],
+    "expected_chunk_id": "Bid1::Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf::p1::17"
+  },
+  {
+    "id": "B2-01",
+    "bid_id": "Bid2",
+    "query": "What is the PORFP number and eMMA project number?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "E20P4600040"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p1::244"
+  },
+  {
+    "id": "B2-02",
+    "bid_id": "Bid2",
+    "query": "What is the proposal due date for the Dell laptop PORFP?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "06/10/2024"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p1::244"
+  },
+  {
+    "id": "B2-03",
+    "bid_id": "Bid2",
+    "query": "How must vendors submit the PORFP response?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "only be accepted through the State's eMaryland Marketplace Advantage"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p1::245"
+  },
+  {
+    "id": "B2-04",
+    "bid_id": "Bid2",
+    "query": "When are vendor questions due and at what time?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "06/01/2024 at 2:00 PM EDT"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p2::246"
+  },
+  {
+    "id": "B2-05",
+    "bid_id": "Bid2",
+    "query": "How soon must delivery occur after award?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "Delivery within 45 days of Award"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p2::247"
+  },
+  {
+    "id": "B2-06",
+    "bid_id": "Bid2",
+    "query": "Which affidavit must the master contractor provide?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "Mercury Affidavit"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p2::247"
+  },
+  {
+    "id": "B2-07",
+    "bid_id": "Bid2",
+    "query": "Who is the agency procurement point of contact?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 3,
+    "expect_text_contains": [
+      "Tamaira Hawkins"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p3::249"
+  },
+  {
+    "id": "B2-08",
+    "bid_id": "Bid2",
+    "query": "What is the agency procurement officer email address?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "thawkins@treasurer.state.md.us"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p2::246"
+  },
+  {
+    "id": "B2-09",
+    "bid_id": "Bid2",
+    "query": "What laptop model and quantity are requested?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 3,
+    "expect_text_contains": [
+      "SI# CC7802 Dell Latitude 5550"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p3::250"
+  },
+  {
+    "id": "B2-10",
+    "bid_id": "Bid2",
+    "query": "What is the model number and quantity of the Thunderbolt dock?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 3,
+    "expect_text_contains": [
+      "WD22TB4"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p3::250"
+  },
+  {
+    "id": "B2-11",
+    "bid_id": "Bid2",
+    "query": "Which processor is specified for the Dell Latitude 5550?",
+    "expect_file_contains": "Dell_Laptop_Specs",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "Intel Core Ultra 5 125U processor"
+    ],
+    "expected_chunk_id": "Bid2::Dell_Laptop_Specs.pdf::p1::231"
+  },
+  {
+    "id": "B2-12",
+    "bid_id": "Bid2",
+    "query": "How much memory and storage are listed in the Dell laptop specification?",
+    "expect_file_contains": "Dell_Laptop_Specs",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "16 GB: 2 x 8 GB, DDR5"
+    ],
+    "expected_chunk_id": "Bid2::Dell_Laptop_Specs.pdf::p1::231"
+  },
+  {
+    "id": "B2-13",
+    "bid_id": "Bid2",
+    "query": "What display size and resolution are specified?",
+    "expect_file_contains": "Dell_Laptop_Specs",
+    "expect_page": 1,
+    "expect_text_contains": [
+      "15.6\", FHD 1920x1080"
+    ],
+    "expected_chunk_id": "Bid2::Dell_Laptop_Specs.pdf::p1::231"
+  },
+  {
+    "id": "B2-14",
+    "bid_id": "Bid2",
+    "query": "How long is the extended Dell hardware warranty?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 3,
+    "expect_text_contains": [
+      "3 years following the date of delivery"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p3::251"
+  },
+  {
+    "id": "B2-15",
+    "bid_id": "Bid2",
+    "query": "When must invoices be submitted after delivery?",
+    "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
+    "expect_page": 2,
+    "expect_text_contains": [
+      "within 10 days of delivering the equipment"
+    ],
+    "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p2::247"
+  }
+]

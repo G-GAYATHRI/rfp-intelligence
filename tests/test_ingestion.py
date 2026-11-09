@@ -13,3 +13,6 @@ def test_addendum_number():
 
 def test_hyphenation_fix():
     assert fix_text("compu-\nter") == "computer"
+
+def test_addendum_number_with_no_label():
+    assert detect_addendum_number("Addendum No. 2 - RFP.pdf") == 2

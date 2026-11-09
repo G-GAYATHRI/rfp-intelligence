@@ -1,8 +1,6 @@
-pymupdf
-pdfplumber
+PyMuPDF>=1.23
 beautifulsoup4
 lxml
-trafilatura
 chromadb
 rank-bm25
 sentence-transformers
@@ -13,4 +11,6 @@ python-dotenv
 pytest
 langgraph
 streamlit
-anthropic
+anthropic 
+httpx
+scikit-learn

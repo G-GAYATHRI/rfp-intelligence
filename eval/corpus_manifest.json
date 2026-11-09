@@ -1,0 +1,9 @@
+{
+  "source": "actual uploaded Bid1 and Bid2 source files copied into eval/corpus",
+  "parsed_source_pages": 76,
+  "pages_with_evaluation_chunks": 75,
+  "chunks": 253,
+  "pairs": 27,
+  "bid1_pairs": 12,
+  "bid2_pairs": 15
+}

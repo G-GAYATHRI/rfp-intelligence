@@ -1,0 +1,49 @@
+{
+  "evaluation_type": "offline reproducible baseline; TF-IDF cosine + BM25 + deterministic lexical reranker; NOT production dense embeddings or CrossEncoder",
+  "dataset_size": 27,
+  "corpus_chunks": 253,
+  "corpus_pages": 75,
+  "results": [
+    {
+      "configuration": "vector_tfidf_offline",
+      "recall_at_5": 0.8148,
+      "mrr": 0.6023,
+      "ndcg_at_5": 0.6721,
+      "misses": [
+        "B1-01",
+        "B1-02",
+        "B1-03",
+        "B2-12",
+        "B2-13"
+      ]
+    },
+    {
+      "configuration": "hybrid_tfidf_bm25_offline",
+      "recall_at_5": 0.7778,
+      "mrr": 0.6299,
+      "ndcg_at_5": 0.6779,
+      "misses": [
+        "B1-01",
+        "B1-02",
+        "B1-03",
+        "B2-08",
+        "B2-12",
+        "B2-13"
+      ]
+    },
+    {
+      "configuration": "hybrid_plus_lexical_rerank_offline",
+      "recall_at_5": 0.7778,
+      "mrr": 0.705,
+      "ndcg_at_5": 0.7326,
+      "misses": [
+        "B1-01",
+        "B1-02",
+        "B1-03",
+        "B2-08",
+        "B2-12",
+        "B2-13"
+      ]
+    }
+  ]
+}

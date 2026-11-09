@@ -5,3 +5,7 @@ __pycache__/
 logs/
 *.pyc
 .pytest_cache/
+
+# Local bid documents and generated outputs
+data/
+outputs/

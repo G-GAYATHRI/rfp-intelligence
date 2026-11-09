@@ -10,8 +10,8 @@ OVERLAP = 150
 TABLE_MAX_CHARS = 1500
 
 HEADING_RE = re.compile(
-    r"^(?:\d+(?:\.\d+)*[\.\)]?\s+[A-Z].{2,80}"   # 1. Scope / 2.3 Bid Bond
-    r"|[A-Z][A-Z0-9 \-&/,\.]{4,80})$"             # ALL CAPS HEADING
+    r"^(?:\d+(?:\.\d+)*[\.\)]?\s+[A-Z].{2,90}"   # 1. Scope / 2.3 Bid Bond
+    r"|[A-Z][A-Z0-9 \-&/,\.]{4,90}):?$"           # ALL CAPS HEADING
 )
 
 
@@ -24,6 +24,7 @@ class Chunk(BaseModel):
     page_number: int
     section: str = ""
     is_table: bool = False
+    doc_date: Optional[str] = None
     text: str
 
     @property
@@ -81,7 +82,7 @@ def chunk_pages(pages: list[PageContent]) -> list[Chunk]:
                 bid_id=page.bid_id, file_name=page.file_name,
                 doc_type=page.doc_type, addendum_number=page.addendum_number,
                 page_number=page.page_number, section=section,
-                is_table=is_table, text=text))
+                is_table=is_table, doc_date=page.doc_date, text=text))
             idx += 1
 
         buf = ""

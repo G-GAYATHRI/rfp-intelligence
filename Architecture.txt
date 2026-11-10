@@ -1,0 +1,35 @@
+PDF / HTML bid folder
+        |
+        v
+Ingestion + parsing + metadata
+        |
+        v
+Page/heading/table-aware chunking
+        |
+        +------------------------------+
+        |                              |
+        v                              v
+SentenceTransformer embeddings       BM25 keyword index
+        |                              |
+        v                              |
+     Chroma                            |
+        |                              |
+        +---------- RRF fusion <-------+
+                       |
+                       v
+             CrossEncoder reranker
+                       |
+                       v
+              Cited retrieval results
+                       |
+          +------------+-------------+
+          |            |             |
+       Extract      Reconcile      Q&A
+          |          addenda        |
+          +------------+-------------+
+                       |
+                 Validator/Critic
+                       |
+              Retry rejected fields
+                       |
+             Structured JSON + trace

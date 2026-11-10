@@ -14,7 +14,7 @@ _col = _client.get_or_create_collection(
     "rfp_chunks", metadata={"hnsw:space": "cosine"})
 
 
-VERSION = 0   # bumps on every index change; invalidates the BM25 cache
+VERSION = 0  
 _UPSERT_BATCH = 64
 
 
@@ -32,11 +32,7 @@ def _meta(chunk: Chunk) -> dict:
 
 
 def replace_bid(bid_id: str, chunks: list[Chunk]) -> int:
-    """Upsert the new chunks first, then drop stale ids.
-
-    A failure while embedding or writing leaves the previous bid index in place.
-    An empty chunk list does not delete the existing bid.
-    """
+    
     global VERSION
     unique: dict[str, Chunk] = {}
     for chunk in chunks:

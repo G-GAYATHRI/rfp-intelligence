@@ -1,4 +1,3 @@
-"""Evidence-aware critic: verifies citations and exact high-risk values."""
 from __future__ import annotations
 import re
 STOP={"the","and","for","with","that","this","from","are","was","were","bid","not","any","all","per","its","into","over","than","then","the"}
@@ -42,8 +41,6 @@ def check_field(name,field,evidence):
  text="\n".join(h.get("text","") for h in hits)
  if name.lower()=="due date" and not DATE_RE.search(str(value)): reasons.append("Due Date has no recognizable date")
  if not _supported(value,text): reasons.append("Cited passage does not support the value")
- # Dates, quantities, percentages and identifiers are high-risk: any such token in the
- # proposed value must occur verbatim in its cited passage (normalizing commas/case).
  norm=lambda s: re.sub(r"[\s,]","",str(s)).lower()
  for label,pattern in (("date",DATE_RE),("numeric value",NUM_RE),("identifier",ID_RE)):
   vals=pattern.findall(str(value))

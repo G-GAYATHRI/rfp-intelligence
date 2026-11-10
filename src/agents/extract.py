@@ -1,5 +1,3 @@
-"""Extraction agent. Values may only come from chunk ids present in the evidence."""
-
 from __future__ import annotations
 
 from src.agents.llm import LLMCallError, chat_json

@@ -1,5 +1,4 @@
-"""Retrieval agent: expand a field question, filter to one bid, return cited passages."""
-
+ 
 from __future__ import annotations
 
 from src.agents.schema import FIELD_QUERIES
@@ -15,8 +14,7 @@ def retrieve(bid_id: str, fields: list[str], feedback: dict | None = None,
         query = FIELD_QUERIES.get(name, name)
         if feedback.get(name):
             query = f"{query} {name}"
-        # Let failures reach the orchestrator so they are recorded in the trace;
-        # silently converting an index/model failure into "not found" is misleading.
+
         found = search(query, top_k=per_query, mode="hybrid", bid_id=bid_id)
         for hit in found:
             hits.setdefault(hit["chunk_id"], hit)

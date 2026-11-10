@@ -1,4 +1,3 @@
-"""Apply chronological addendum changes only with matching addendum evidence."""
 from __future__ import annotations
 
 def _source(hit: dict) -> dict:
@@ -34,7 +33,6 @@ def apply_addendum_changes(fields: dict, payload: dict, evidence: dict) -> tuple
                 except (TypeError,ValueError): continue
             valid.append((actual_no,_source(hit)))
         if not valid: continue
-        # A change attributed to one addendum must be grounded in that addendum.
         numbers={n for n,_ in valid}
         if len(numbers)!=1: continue
         add_no=next(iter(numbers))

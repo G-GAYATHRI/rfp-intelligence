@@ -1,5 +1,3 @@
-"""Rule-based query expansion. Add terms here; no code changes needed elsewhere."""
-
 SYNONYMS: dict[str, list[str]] = {
     "deadline": ["due date", "submission deadline", "closing date", "proposal due"],
     "due date": ["submission deadline", "closing date", "deadline", "new due date"],

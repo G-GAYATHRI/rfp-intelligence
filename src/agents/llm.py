@@ -1,12 +1,3 @@
-
-"""Provider-explicit LLM calls with actionable configuration errors.
-
-Supported providers:
-- Anthropic Claude
-- OpenAI
-- Google Gemini (OpenAI-compatible API)
-"""
-
 from __future__ import annotations
 
 import json
@@ -22,7 +13,7 @@ class LLMConfigError(RuntimeError):
 
 
 class LLMCallError(RuntimeError):
-    """Raised when an LLM request fails."""
+    """Raised when an LLM request is unsuccessful."""
 
 
 GEMINI_BASE_URL = (

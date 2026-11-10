@@ -14,7 +14,6 @@ TOKEN_RE = re.compile(r"[a-z0-9]+(?:[-_./][a-z0-9]+)*")
 
 
 def tokenize(text: str) -> list[str]:
-    """Keeps IDs whole (JA-207652, WD22TB4) AND adds their parts."""
     toks: list[str] = []
     for t in TOKEN_RE.findall(text.lower()):
         toks.append(t)
@@ -37,7 +36,6 @@ def build_where(bid_id=None, doc_type=None, addendum_number=None) -> Optional[di
     return conds[0] if len(conds) == 1 else {"$and": conds}
 
 
-# ---------- keyword (BM25) ----------
 _bm25_cache: dict = {}
 
 
@@ -66,7 +64,6 @@ def keyword_search(query: str, top_k: int, where=None) -> list[dict]:
     return [{**chunks[i], "score": float(scores[i])} for i in order if scores[i] > 0]
 
 
-# ---------- fusion ----------
 def rrf(result_lists: list[list[dict]], k: int = 60) -> list[dict]:
     """Reciprocal Rank Fusion: score = sum(1 / (k + rank)) over all lists."""
     fused: dict[str, float] = {}

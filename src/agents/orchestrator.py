@@ -1,9 +1,3 @@
-"""LangGraph orchestrator for extraction.
-
-The graph is: ingest -> extract field groups -> reconcile addenda -> validate
--> retry rejected fields (bounded) -> write the JSON record.
-"""
-
 from __future__ import annotations
 
 import json
@@ -163,7 +157,6 @@ def extract_node(state: GraphState) -> dict:
 
 
 def reconcile_node(state: GraphState) -> dict:
-    """Review every indexed addendum, in numeric order, not just top-k search hits."""
     started = time.perf_counter()
     from src.agents.llm import LLMCallError, chat_json
     from src.search import store
@@ -173,8 +166,6 @@ def reconcile_node(state: GraphState) -> dict:
     changes = []
     errors = list(state.get("errors") or [])
     usage = {"input_tokens": 0, "output_tokens": 0}
-    # Pull all addendum chunks directly from the bid-scoped index; retrieval top-k
-    # must not silently omit an addendum that contains a critical amendment.
     raw = store.get_chunks({"$and": [{"bid_id": bid_id}, {"doc_type": "addendum"}]})
     addenda = {}
     for item in raw:
@@ -194,8 +185,6 @@ def reconcile_node(state: GraphState) -> dict:
         try:
             payload, one_usage = chat_json(RECONCILE_SYSTEM, user)
             for key in usage: usage[key] += int(one_usage.get(key) or 0)
-            # Force attribution to the currently reviewed addendum; reconciliation
-            # still verifies each source chunk's indexed metadata independently.
             for item in payload.get("changes") or []:
                 item["addendum_number"] = number
             fields, one_changes = apply_addendum_changes(fields, payload, evidence)

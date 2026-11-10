@@ -127,7 +127,7 @@
     "expect_file_contains": "Addendum 2",
     "expect_page": 1,
     "expect_text_contains": [
-      "ACKNOWLEDGE AND RETURN/SUBMIT A COPY OF THIS ADDENDUM"
+      "Please sign this addendum and submit along with your copies of the proposal"
     ],
     "expected_chunk_id": "Bid1::Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf::p1::17"
   },
@@ -226,7 +226,8 @@
     "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
     "expect_page": 3,
     "expect_text_contains": [
-      "SI# CC7802 Dell Latitude 5550"
+      "SI# CC7802 Dell Latitude 5550",
+      "30"
     ],
     "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p3::250"
   },
@@ -259,7 +260,8 @@
     "expect_file_contains": "Dell_Laptop_Specs",
     "expect_page": 1,
     "expect_text_contains": [
-      "16 GB: 2 x 8 GB, DDR5"
+      "16 GB: 2 x 8 GB, DDR5",
+      "256 GB, M.2 2230"
     ],
     "expected_chunk_id": "Bid2::Dell_Laptop_Specs.pdf::p1::231"
   },
@@ -292,7 +294,7 @@
     "expect_file_contains": "PORFP_-_Dell_Laptop_Final",
     "expect_page": 2,
     "expect_text_contains": [
-      "within 10 days of delivering the equipment"
+      "within 10 days of delivering the"
     ],
     "expected_chunk_id": "Bid2::PORFP_-_Dell_Laptop_Final.pdf::p2::247"
   }

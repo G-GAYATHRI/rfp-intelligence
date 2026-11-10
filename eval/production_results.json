@@ -1,0 +1,48 @@
+{
+  "evaluation_type": "production Chroma + configured SentenceTransformer embeddings + BM25 + configured CrossEncoder reranker",
+  "dataset_size": 27,
+  "results": [
+    {
+      "mode": "vector",
+      "k": 5,
+      "n": 27,
+      "recall_at_k": 0.8148,
+      "mrr": 0.6574,
+      "ndcg_at_k": 0.6972,
+      "misses": [
+        "B1-02",
+        "B1-12",
+        "B2-06",
+        "B2-08",
+        "B2-13"
+      ]
+    },
+    {
+      "mode": "hybrid",
+      "k": 5,
+      "n": 27,
+      "recall_at_k": 0.8148,
+      "mrr": 0.6753,
+      "ndcg_at_k": 0.7099,
+      "misses": [
+        "B1-02",
+        "B1-03",
+        "B2-06",
+        "B2-12",
+        "B2-13"
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "k": 5,
+      "n": 27,
+      "recall_at_k": 0.9259,
+      "mrr": 0.6278,
+      "ndcg_at_k": 0.7036,
+      "misses": [
+        "B1-02",
+        "B1-03"
+      ]
+    }
+  ]
+}

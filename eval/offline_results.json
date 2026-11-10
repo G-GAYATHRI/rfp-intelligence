@@ -6,41 +6,44 @@
   "results": [
     {
       "configuration": "vector_tfidf_offline",
-      "recall_at_5": 0.8148,
-      "mrr": 0.6023,
-      "ndcg_at_5": 0.6721,
+      "recall_at_5": 0.7778,
+      "mrr": 0.5897,
+      "ndcg_at_5": 0.6562,
       "misses": [
         "B1-01",
         "B1-02",
         "B1-03",
+        "B2-09",
         "B2-12",
         "B2-13"
       ]
     },
     {
       "configuration": "hybrid_tfidf_bm25_offline",
-      "recall_at_5": 0.7778,
-      "mrr": 0.6299,
-      "ndcg_at_5": 0.6779,
+      "recall_at_5": 0.7407,
+      "mrr": 0.6184,
+      "ndcg_at_5": 0.6636,
       "misses": [
         "B1-01",
         "B1-02",
         "B1-03",
         "B2-08",
+        "B2-09",
         "B2-12",
         "B2-13"
       ]
     },
     {
       "configuration": "hybrid_plus_lexical_rerank_offline",
-      "recall_at_5": 0.7778,
-      "mrr": 0.705,
-      "ndcg_at_5": 0.7326,
+      "recall_at_5": 0.7407,
+      "mrr": 0.6841,
+      "ndcg_at_5": 0.7092,
       "misses": [
         "B1-01",
         "B1-02",
         "B1-03",
         "B2-08",
+        "B2-09",
         "B2-12",
         "B2-13"
       ]

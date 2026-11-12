@@ -77,7 +77,10 @@ def answer_question(question: str, bid_id: str | None = None, top_k: int = 6) ->
     return {
         "question": question,
         "answer": answer,
-        "sources": [{"file": s["file"], "page": s["page"]} for s in bound["sources"]],
+        "sources": [
+            {"file": s["file"], "page": s["page"], "chunk_id": s["chunk_id"]}
+            for s in bound["sources"]
+        ],
         "confidence": bound["confidence"],
         "notes": bound["notes"],
         "bid_id": scoped,

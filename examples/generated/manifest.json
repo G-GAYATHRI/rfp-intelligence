@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-11-12T14:13:31.323383+00:00",
+  "extractions": {
+    "Bid1": {
+      "path": "examples\\generated\\Bid1.json",
+      "validation": {
+        "passed": 5,
+        "failed": 1,
+        "not_found": 14
+      },
+      "error_count": 0,
+      "ingestion_ok": true
+    },
+    "Bid2": {
+      "path": "examples\\generated\\Bid2.json",
+      "validation": {
+        "passed": 13,
+        "failed": 0,
+        "not_found": 7
+      },
+      "error_count": 0,
+      "ingestion_ok": true
+    }
+  },
+  "sample_qa": {
+    "path": "examples\\generated\\sample_qa.json",
+    "question_count": 10,
+    "cited_answer_count": 10
+  }
+}

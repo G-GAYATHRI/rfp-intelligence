@@ -1,0 +1,189 @@
+{
+  "generated_at": "2026-11-12T14:13:31.323383+00:00",
+  "generator": "scripts.generate_demo_artifacts",
+  "retrieval_mode": "hybrid_rerank",
+  "question_count": 10,
+  "cited_answer_count": 10,
+  "items": [
+    {
+      "id": "B1-01",
+      "bid_id": "Bid1",
+      "question": "What is the final submission deadline after the addenda?",
+      "answer": "The new due date (final submission deadline) for the RFP is July 9, 2024 at 2:00 PM CST.",
+      "confidence": 1.0,
+      "notes": "Addendum 2 explicitly states that the new due date for the RFP is July 9, 2024 at 2:00 PM CST.",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+          "page": 1,
+          "chunk_id": "Bid1:Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:0:78524c95"
+        }
+      ]
+    },
+    {
+      "id": "B1-03",
+      "bid_id": "Bid1",
+      "question": "Who is the buyer listed on the original RFP?",
+      "answer": "JASMINE ALZATE (ALZATE, JASMINE)",
+      "confidence": 0.95,
+      "notes": "The buyer listed in the RFP document is Jasmine Alzate.",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 2,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:0:ce4aa78e"
+        }
+      ]
+    },
+    {
+      "id": "B1-05",
+      "bid_id": "Bid1",
+      "question": "What is the initial contract term and renewal structure?",
+      "answer": "The initial contract term is three (3) years, with a renewal structure consisting of two (2) successive one (1) year extensions upon mutual agreement of the awarded vendor and the District, for a total contract duration not to exceed five (5) years. Written notice of non-renewal must be given no fewer than ninety (90) days prior to the expiration of the current term.",
+      "confidence": 1.0,
+      "notes": "",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 2,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:2:8848d07c"
+        },
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 2,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:3:d6715757"
+        }
+      ]
+    },
+    {
+      "id": "B1-07",
+      "bid_id": "Bid1",
+      "question": "What is the minimum USB requirement for the non-touch display monitor clarified by Addendum 1?",
+      "answer": "USB 3.1 is clarified as a minimum requirement for the non-touch display monitor.",
+      "confidence": 1.0,
+      "notes": "",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+          "page": 1,
+          "chunk_id": "Bid1:Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:0:8c4fd864"
+        }
+      ]
+    },
+    {
+      "id": "B1-12",
+      "bid_id": "Bid1",
+      "question": "What does Addendum 2 say bidders must submit with their proposal?",
+      "answer": "Addendum 2 states that bidders must sign the addendum and submit it along with their copies of the proposal (along with acknowledging and returning/submitting a copy of the addendum with their proposal).",
+      "confidence": 0.9,
+      "notes": "",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+          "page": 1,
+          "chunk_id": "Bid1:Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:1:e389b381"
+        },
+        {
+          "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+          "page": 1,
+          "chunk_id": "Bid1:Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:0:78524c95"
+        }
+      ]
+    },
+    {
+      "id": "B2-01",
+      "bid_id": "Bid2",
+      "question": "What is the PORFP number and eMMA project number?",
+      "answer": "The PORFP number is #E20P4600040 and the eMMA project number is BPM044557.",
+      "confidence": 1.0,
+      "notes": "",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 1,
+          "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p1:0:42b2cdb6"
+        },
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 1,
+          "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p1:3:94ebcd99"
+        }
+      ]
+    },
+    {
+      "id": "B2-02",
+      "bid_id": "Bid2",
+      "question": "What is the proposal due date for the Dell laptop PORFP?",
+      "answer": "The proposal due date is 06/10/2024.",
+      "confidence": 1.0,
+      "notes": "",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 1,
+          "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p1:0:42b2cdb6"
+        }
+      ]
+    },
+    {
+      "id": "B2-05",
+      "bid_id": "Bid2",
+      "question": "How soon must delivery occur after award?",
+      "answer": "Delivery must occur within 45 days of the award.",
+      "confidence": 1.0,
+      "notes": "",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 2,
+          "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p2:6:267f45c7"
+        }
+      ]
+    },
+    {
+      "id": "B2-09",
+      "bid_id": "Bid2",
+      "question": "What laptop model and quantity are requested?",
+      "answer": "The requested laptop model is the Dell Latitude 5550 (with a quantity of 30).",
+      "confidence": 1.0,
+      "notes": "The quantity and model are specified in the PORFP document table.",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 3,
+          "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p3:6:b00e2d40"
+        },
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 3,
+          "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p3:1:50133536"
+        }
+      ]
+    },
+    {
+      "id": "B2-12",
+      "bid_id": "Bid2",
+      "question": "How much memory and storage are listed in the Dell laptop specification?",
+      "answer": "The Dell laptop specification lists 16 GB of memory (2 x 8 GB, DDR5, 5600 MT/s) and a storage capacity of 256 GB (M.2 2230 TLC Gen 4 PCIe NVMe SSD).",
+      "confidence": 1.0,
+      "notes": "",
+      "citation_status": "cited",
+      "sources": [
+        {
+          "file": "Dell_Laptop_Specs.pdf",
+          "page": 1,
+          "chunk_id": "Bid2:Dell_Laptop_Specs.pdf:p1:2:990597f8"
+        }
+      ]
+    }
+  ]
+}

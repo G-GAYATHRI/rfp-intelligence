@@ -1,0 +1,179 @@
+{
+  "bid_id": "Bid1",
+  "fields": {
+    "Bid Number": {
+      "value": "JA-207652",
+      "sources": [
+        {
+          "file": "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1,
+          "chunk_id": "Bid1:Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html:p1:1:89d5f810"
+        },
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 10,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p10:0:89c36f2c"
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "Contract Management JA-207652 found in BidNet Direct and document title."
+    },
+    "Title": {
+      "value": "Student and Staff Computing Devices",
+      "sources": [
+        {
+          "file": "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1,
+          "chunk_id": "Bid1:Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html:p1:1:89d5f810"
+        },
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 10,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p10:0:89c36f2c"
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "Title found in document headers and BidNet Direct info."
+    },
+    "Due Date": {
+      "value": "July 9, 2024 at 2:00 PM CST",
+      "sources": [
+        {
+          "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+          "page": 1,
+          "chunk_id": "Bid1:Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:0:78524c95"
+        }
+      ],
+      "confidence": 1.0,
+      "notes": "Extended via Addendum No. 2"
+    },
+    "Bid Submission Type": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Term of Bid": {
+      "value": "Three (3) year agreement with two (2) successive one (1) year extensions not to exceed five (5) years total",
+      "sources": [
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 2,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:3:d6715757"
+        }
+      ],
+      "confidence": 1.0,
+      "notes": ""
+    },
+    "Pre Bid Meeting": {
+      "value": "June 10, 2024 at 2:00 PM CST",
+      "sources": [
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 2,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:1:82398147"
+        }
+      ],
+      "confidence": 1.0,
+      "notes": ""
+    },
+    "Installation": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Bid Bond Requirement": {
+      "value": null,
+      "sources": [
+        {
+          "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+          "page": 9,
+          "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p9:2:1c58e033"
+        }
+      ],
+      "confidence": 0.0,
+      "notes": "Mentioned that the offeror must comply with insurance, bid bond, or liability requirements noted elsewhere, but no specific bond amount or requirement details are explicitly stated in the provided text."
+    },
+    "Delivery Date": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Payment Terms": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Any Additional Documentation Required": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Extraction error: LLM API returned HTTP 503: [{'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}]"
+    },
+    "MFG for Registration": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Contract or Cooperative to use": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Model_no": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Part_no": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Product": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "contact_info": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "company_name": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Bid Summary": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    },
+    "Product Specification": {
+      "value": null,
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "Not found in documents"
+    }
+  },
+  "addendum_changes": [],
+  "validation": {
+    "passed": 5,
+    "failed": 1,
+    "not_found": 14
+  },
+  "errors": [],
+  "ingestion_ok": true
+}

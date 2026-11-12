@@ -68,7 +68,7 @@ def main() -> None:
         result = answer_question(
             item["query"],
             bid_id=item["bid_id"],
-            top_k=6,
+            top_k=10,
         )
         sources = result.get("sources") or []
         has_traceable_citation = (

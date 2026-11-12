@@ -1,0 +1,137 @@
+{
+  "input_file": "examples\\generated\\sample_qa.json",
+  "indexed_chunk_count": 402,
+  "question_count": 10,
+  "total_citations": 14,
+  "valid_citations": 14,
+  "invalid_citations": 0,
+  "overall_status": "PASS",
+  "results": [
+    {
+      "question_id": "B1-01",
+      "bid_id": "Bid1",
+      "chunk_id": "Bid1:Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:0:78524c95",
+      "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B1-03",
+      "bid_id": "Bid1",
+      "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:0:ce4aa78e",
+      "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 2,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B1-05",
+      "bid_id": "Bid1",
+      "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:2:8848d07c",
+      "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 2,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B1-05",
+      "bid_id": "Bid1",
+      "chunk_id": "Bid1:JA-207652 Student and Staff Computing Devices FINAL.pdf:p2:3:d6715757",
+      "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 2,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B1-07",
+      "bid_id": "Bid1",
+      "chunk_id": "Bid1:Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:0:8c4fd864",
+      "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B1-12",
+      "bid_id": "Bid1",
+      "chunk_id": "Bid1:Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:1:e389b381",
+      "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B1-12",
+      "bid_id": "Bid1",
+      "chunk_id": "Bid1:Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf:p1:0:78524c95",
+      "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B2-01",
+      "bid_id": "Bid2",
+      "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p1:0:42b2cdb6",
+      "file": "PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B2-01",
+      "bid_id": "Bid2",
+      "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p1:3:94ebcd99",
+      "file": "PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B2-02",
+      "bid_id": "Bid2",
+      "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p1:0:42b2cdb6",
+      "file": "PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B2-05",
+      "bid_id": "Bid2",
+      "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p2:6:267f45c7",
+      "file": "PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 2,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B2-09",
+      "bid_id": "Bid2",
+      "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p3:6:b00e2d40",
+      "file": "PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 3,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B2-09",
+      "bid_id": "Bid2",
+      "chunk_id": "Bid2:PORFP_-_Dell_Laptop_Final.pdf:p3:1:50133536",
+      "file": "PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 3,
+      "valid": true,
+      "issues": []
+    },
+    {
+      "question_id": "B2-12",
+      "bid_id": "Bid2",
+      "chunk_id": "Bid2:Dell_Laptop_Specs.pdf:p1:2:990597f8",
+      "file": "Dell_Laptop_Specs.pdf",
+      "page": 1,
+      "valid": true,
+      "issues": []
+    }
+  ]
+}

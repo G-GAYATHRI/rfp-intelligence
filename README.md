@@ -161,9 +161,14 @@ python -m pytest -q
 The current unit suite covers document classification, addendum numbering, reconciliation evidence requirements, page-vs-addendum numbering, citation resolution, due-date evidence, LLM provider configuration, and safe indexer behavior when parsing returns no pages.
 
 ## 8. Known limitations / next validation steps
+- OCR is not implemented yet. Scanned PDF pages without extractable text are detected and reported as requiring OCR. The system fails closed rather than indexing empty content. Bid1 still contains scanned pages 55–59 that require OCR.
 
-- OCR is not implemented. A scanned PDF with no extractable text is reported and fails closed rather than being indexed as an empty document.
-- The production retrieval benchmark still needs to be run after installing the full requirements in the deployment/demo environment; see Section 6.
-- The offline reranker is a deterministic diagnostic baseline, not a neural cross-encoder.
-- The HTML BidNet pages can vary in what the portal makes available; the parser indexes only the content present in the downloaded HTML file.
-- Review generated extraction JSON and citations against source documents before relying on them for an actual bid submission.
+- Production retrieval benchmark is pending. The retrieval benchmark still needs to be executed in the deployment/demo environment after installing the complete requirements. See Section 6.
+
+- Offline reranking is a diagnostic baseline. The current offline reranker is deterministic and is not a neural cross-encoder. Its results should not be treated as equivalent to production neural reranking.
+
+- BidNet HTML coverage is dependent on downloaded content. The HTML parser indexes only the content available in the downloaded HTML files. Information dynamically loaded or unavailable in those files may not be extracted.
+
+- Additional documentation extraction requires further validation. Retrieval queries have been expanded to identify additional bid documentation, including required forms and supporting documents. Extracted results should still be checked against the original solicitation and addenda.
+
+- LLM HTTP 503 error handling has been tested, but broader validation remains necessary. LLMCallError propagation and end-to-end error persistence tests have passed. Simulated HTTP 503 failures were correctly propagated and recorded, with failure notes saved across affected fields. Production API failure scenarios still require validation.

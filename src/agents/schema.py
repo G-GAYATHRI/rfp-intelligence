@@ -53,7 +53,14 @@ FIELD_QUERIES = {
     "Bid Bond Requirement": "bid bond bid security surety guarantee amount",
     "Delivery Date": "delivery date delivery window days after award",
     "Payment Terms": "payment terms net 30 invoice invoicing",
-    "Any Additional Documentation Required": "affidavit certificate insurance W-9 forms required documents",
+    "Any Additional Documentation Required": (
+    "required proposal submission attachments supporting documents "
+    "Form 1295 Certificate of Interested Parties "
+    "M/WBE Compliance Guidelines Forms "
+    "M/WBE certificates Affirmative Action EEO Supplier Diversity Plan "
+    "W-9 tax form product literature product documentation "
+    "credit application Punch Out Process insurance post-award"
+    ),
     "MFG for Registration": "manufacturer authorization registered reseller OEM",
     "Contract or Cooperative to use": "cooperative contract state contract vehicle",
     "Model_no": "model number models requested",

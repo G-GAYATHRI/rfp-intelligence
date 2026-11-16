@@ -4,17 +4,56 @@ from src.agents.llm import LLMCallError, chat_json
 from src.agents.retrieve import format_evidence
 from src.agents.schema import blank_field
 
+
 SYSTEM = """You extract fields from RFP evidence passages.
-Rules:
+
+General rules:
 - Use only the passages provided. Do not use outside knowledge.
 - If a passage does not state the fact, set value to null and notes to "Not found in documents".
 - Every non-null value must list one or more source_chunk_ids copied exactly from the evidence labels.
 - Prefer the latest addendum over the base RFP when both state the same field.
 - For Pre Bid Meeting, use "None" only when the evidence says there is no meeting.
 - For Bid Bond Requirement, use "Not required" only when the evidence says no bond or no bid security.
-- Return JSON only, with this shape:
+
+Special rule for Due Date:
+- Extract the deadline for submitting the actual bid or proposal.
+- Prefer dates explicitly labelled "PROPOSAL DUE", "PROPOSAL DUE DATE", "BID DUE", or "SUBMISSION DEADLINE".
+- Do NOT use "Questions Due", "Questions Closing Date", or a question-submission deadline as the proposal Due Date.
+- Do NOT confuse delivery dates, pre-bid meeting dates, or individual product line-item dates with the overall proposal deadline.
+- If both a proposal deadline and a questions deadline appear, select the proposal deadline.
+- If no explicit proposal or bid submission deadline is found, return null.
+
+
+Special rule for Any Additional Documentation Required:
+
+- Identify documents and forms that the bidder must submit with the proposal.
+- Distinguish the following categories clearly:
+
+  1. REQUIRED WITH PROPOSAL:
+     Documents explicitly required to be submitted with the bid or proposal.
+
+  2. CONDITIONAL:
+     Documents required only when a stated condition applies, such as the bidder's business status, certification, or proposed business arrangement.
+
+  3. OPTIONAL:
+     Documents explicitly described as optional. Do not describe these as mandatory.
+
+  4. POST-AWARD:
+     Documents required only after contract award. State the deadline if the evidence provides one. Do not describe these as proposal-submission attachments.
+
+- Include the document name and a concise explanation of its requirement.
+- Do not treat a document as mandatory merely because it is mentioned in the RFP.
+- Preserve conditions and exceptions stated in the source passages.
+- Prefer addendum instructions when they clarify or change the original RFP.
+- Cite every identified requirement using source_chunk_ids from the supplied evidence.
+- If no additional documentation requirements are found, return null with notes explaining that no requirements were identified.
+
+
+
+Return JSON only, with this shape:
 {"fields": {"Field Name": {"value": null, "confidence": 0.0, "notes": "", "source_chunk_ids": []}}}
 """
+
 
 
 def bind_field(payload, evidence: dict, field_name: str | None = None) -> dict:
@@ -62,11 +101,7 @@ def extract_fields(field_names: list[str], hits: list[dict], feedback: dict | No
     if corrections:
         user += f"A previous draft was rejected. Fix only these issues: {corrections}\n"
     user += "Evidence:\n" + format_evidence(hits)
-    try:
-        payload, usage = chat_json(SYSTEM, user)
-    except LLMCallError as exc:
-        note = f"Extraction error: {exc}"
-        return {name: blank_field(note) for name in field_names}, {}
+    payload, usage = chat_json(SYSTEM, user)
     raw_fields = payload.get("fields") or {}
     return {
         name: bind_field(raw_fields.get(name), evidence, name) for name in field_names

@@ -7,6 +7,10 @@ import re
 import httpx
 import config
 
+import time
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+
 
 class LLMConfigError(RuntimeError):
     """Raised when the LLM configuration is invalid."""
@@ -222,6 +226,34 @@ def _anthropic(
             f"Anthropic API request failed: {exc}"
         ) from exc
 
+def _get_retry_delay(response: httpx.Response, attempt: int) -> float:
+    """Return the server-requested retry delay or exponential backoff."""
+
+    retry_after = response.headers.get("Retry-After")
+
+    if retry_after:
+        try:
+            # Retry-After can be a number of seconds.
+            delay = float(retry_after)
+        except ValueError:
+            try:
+                # It can also be an HTTP date.
+                retry_at = parsedate_to_datetime(retry_after)
+
+                if retry_at.tzinfo is None:
+                    retry_at = retry_at.replace(tzinfo=timezone.utc)
+
+                delay = (
+                    retry_at - datetime.now(timezone.utc)
+                ).total_seconds()
+            except (TypeError, ValueError, OverflowError):
+                delay = 0
+
+        if delay > 0:
+            return min(delay, 30.0)
+
+    # Attempt 0 -> 1 second; attempt 1 -> 2 seconds.
+    return float(2 ** attempt)
 
 def _openai_compatible(
     system: str,
@@ -233,6 +265,7 @@ def _openai_compatible(
     """Call an OpenAI-compatible chat completion API.
 
     Used for OpenAI and Google's Gemini API.
+    Retries transient HTTP failures with bounded backoff.
     """
 
     url = f"{base_url.rstrip('/')}/chat/completions"
@@ -251,64 +284,85 @@ def _openai_compatible(
         ],
     }
 
-    try:
-        response = httpx.post(
-            url,
-            headers=headers,
-            json=payload,
-            timeout=90,
-        )
+    retryable_statuses = {429, 500, 502, 503, 504}
+    max_attempts = 3
 
-        response.raise_for_status()
-
-        body = response.json()
-
-        content = (
-            body["choices"][0]["message"]["content"]
-        )
-
-        if isinstance(content, list):
-            content = "".join(
-                item.get("text", "")
-                for item in content
-                if isinstance(item, dict)
-            )
-
-        if not isinstance(content, str):
-            raise LLMCallError(
-                "Provider returned an unsupported response format."
-            )
-
-        usage_data = body.get("usage") or {}
-
-        usage = {
-            "input_tokens": usage_data.get("prompt_tokens"),
-            "output_tokens": usage_data.get("completion_tokens"),
-        }
-
-        return parse_json(content), usage
-
-    except LLMCallError:
-        raise
-
-    except httpx.HTTPStatusError as exc:
-        status = exc.response.status_code
-
+    for attempt in range(max_attempts):
         try:
-            details = exc.response.json()
-        except ValueError:
-            details = exc.response.text[:1000]
+            response = httpx.post(
+                url,
+                headers=headers,
+                json=payload,
+                timeout=90,
+            )
 
-        raise LLMCallError(
-            f"LLM API returned HTTP {status}: {details}"
-        ) from exc
+            if (
+                response.status_code in retryable_statuses
+                and attempt < max_attempts - 1
+            ):
+                delay = _get_retry_delay(response, attempt)
 
-    except httpx.RequestError as exc:
-        raise LLMCallError(
-            f"Could not connect to LLM API: {exc}"
-        ) from exc
+                print(
+                    f"LLM API returned HTTP {response.status_code}. "
+                    f"Retrying in {delay:.1f} seconds "
+                    f"(attempt {attempt + 2}/{max_attempts})."
+                )
 
-    except (KeyError, IndexError, TypeError, ValueError) as exc:
-        raise LLMCallError(
-            f"Unexpected LLM API response: {exc}"
-        ) from exc
+                time.sleep(delay)
+                continue
+
+            response.raise_for_status()
+
+            body = response.json()
+
+            content = body["choices"][0]["message"]["content"]
+
+            if isinstance(content, list):
+                content = "".join(
+                    item.get("text", "")
+                    for item in content
+                    if isinstance(item, dict)
+                )
+
+            if not isinstance(content, str):
+                raise LLMCallError(
+                    "Provider returned an unsupported response format."
+                )
+
+            usage_data = body.get("usage") or {}
+
+            usage = {
+                "input_tokens": usage_data.get("prompt_tokens"),
+                "output_tokens": usage_data.get("completion_tokens"),
+            }
+
+            return parse_json(content), usage
+
+        except LLMCallError:
+            raise
+
+        except httpx.HTTPStatusError as exc:
+            status = exc.response.status_code
+
+            try:
+                details = exc.response.json()
+            except ValueError:
+                details = exc.response.text[:1000]
+
+            raise LLMCallError(
+                f"LLM API returned HTTP {status}: {details}"
+            ) from exc
+
+        except httpx.RequestError as exc:
+            raise LLMCallError(
+                f"Could not connect to LLM API: {exc}"
+            ) from exc
+
+        except (KeyError, IndexError, TypeError, ValueError) as exc:
+            raise LLMCallError(
+                f"Unexpected LLM API response: {exc}"
+            ) from exc
+
+    raise LLMCallError(
+        f"LLM API request failed after {max_attempts} attempts."
+    )
